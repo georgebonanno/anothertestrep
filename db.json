@@ -1,0 +1,59 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2016-02-05",
+      "title": "shopping",
+      "price": 20.1,
+      "type": "expense"
+    },
+    {
+      "id": 2,
+      "date": "2016-01-04T00:00:00.000Z",
+      "title": "maintenance",
+      "price": 30.3,
+      "type": "expense"
+    },
+    {
+      "id": 3,
+      "date": "2016-08-07",
+      "title": "groceries",
+      "price": 10.3,
+      "type": "expense"
+    },
+    {
+      "id": 4,
+      "date": "2016-05-06",
+      "title": "laptop",
+      "price": 400.5,
+      "type": "expense"
+    },
+    {
+      "id": 5,
+      "date": "2014-03-11",
+      "title": "mother's gift",
+      "price": 23,
+      "type": "expense"
+    },
+    {
+      "id": 6,
+      "date": "2015-01-29T00:00:00.000Z",
+      "title": "pay",
+      "price": 5021,
+      "type": "income"
+    },
+    {
+      "id": 7,
+      "date": "2015-01-29T00:00:00.000Z",
+      "title": "overtime",
+      "price": 102,
+      "type": "income"
+    }
+  ],
+  "users": [
+    {
+      "username": "andrew",
+      "password": "username"
+    }
+  ]
+}

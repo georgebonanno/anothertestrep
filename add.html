@@ -1,0 +1,15 @@
+<div><h2> Add </h2></div>
+<section>
+    <div><input type="date" placeholder="dd-MM-yyyy" ng-model="newTransaction.date"/></div>
+    <div><input placeholder="title" ng-model="newTransaction.title"/></div>
+    <div><input type="number" ng-model="newTransaction.price" min="0" placeholder="price" required/></div>
+    <div>
+        <select ng-model="newTransaction.type">
+            <option value="income">income</option>
+            <option value="expence" selected>expence</option>
+        </select>
+    </div>
+    <div>
+        <button class="bt bt-achieve" ng-click="addTransaction()">Add</button>
+    </div>
+</section>

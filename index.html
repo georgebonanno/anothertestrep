@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="Tracker">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/bower_components/angular-chart.js/dist/angular-chart.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body class="cover-bg">
+<section>
+    <header class="page-header">
+        <h1 class="text-center">Budget Tracker</h1>
+    </header>
+    <table>
+        <tr>
+            <td><a href="#/">home</a></td>
+            <td><a href="#/income">income</a></td>
+            <td><a href="#/expense">expense</a></td>
+            <td><a href="#/add">add</a></td>
+        </tr>
+    </table>
+    <ng-view></ng-view>
+</section>
+
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/Chart.js/Chart.js"></script>
+<script src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+
+<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+<script src="/js/users/index.js"></script>
+<script src="/js/users/users.constants.js"></script>
+<script src="/js/users/users.service.js"></script>
+<script src="/js/auth/index.js"></script>
+<script src="/js/auth/auth.service.js"></script>
+<script type="text/javascript">
+    var app = angular.module('app', ['json-server-auth', 'json-server-users']);
+</script>
+
+<script type="text/javascript" src="/js/App.js"></script>
+<script type="text/javascript" src="/js/TransactionService.js"></script>
+<script type="text/javascript" src="/js/controllers/HomeController.js"></script>
+<script type="text/javascript" src="/js/controllers/IncomeController.js"></script>
+<script type="text/javascript" src="/js/controllers/ExpenseController.js"></script>
+<script type="text/javascript" src="/js/controllers/AddController.js"></script>
+<script type="text/javascript" src="/js/controllers/EditController.js"></script>
+
+</body>
+</html>

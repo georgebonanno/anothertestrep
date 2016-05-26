@@ -1,0 +1,25 @@
+<div><h2> Home </h2></div>
+
+<div><span> Balance: &euro;{{ getBalance() }} </span></div>
+
+<div>
+    <canvas id="pie" class="chart chart-pie"
+            chart-data="prices" chart-labels="types">
+    </canvas>
+</div>
+
+<!--<div><input type="text" placeholder="search" ng-model="search"/></div>
+<table class="table table-striped">
+    <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Type</th>
+    </tr>
+    <tr ng-repeat="transaction in transactions | orderBy:'-price' | filter:search track by $index">
+        <td>{{transaction.date | date:'MM/dd/yyyy'}}</td>
+        <td>{{transaction.title}}</td>
+        <td>&euro;{{transaction.price}}</td>
+        <td>{{transaction.type}}</td>
+    </tr>
+</table>-->

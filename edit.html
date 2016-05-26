@@ -1,0 +1,9 @@
+<div><h2> Edit </h2></div>
+<section>
+    <div><input type="date" ng-model="editTransaction.date"/></div>
+    <div><input placeholder="title" ng-model="editTransaction.title"/></div>
+    <div><input type="number" ng-model="editTransaction.price" min="0" placeholder="price" required/></div>
+    <div>
+        <button class="bt bt-achieve" ng-click="edit()">Edit</button>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+<div><h2> Income </h2></div>
+<div><input type="text" placeholder="search" ng-model="search"/></div>
+<table class="table table-striped">
+    <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Type</th>
+    </tr>
+    <tr ng-repeat="transaction in transactions | orderBy:'-price' | filter:search track by $index">
+        <td>{{transaction.date | date:'MM/dd/yyyy'}}</td>
+        <td>{{transaction.title}}</td>
+        <td>&euro;{{transaction.price}}</td>
+        <td>{{transaction.type}}</td>
+        <td>
+            <button class="bt bt-achieve" ng-click="deleteTransaction(transaction)">Delete</button>
+        </td>
+        <td>
+            <button
+                    class="bt bt-achieve"
+                    ng-click="editTransaction(transaction)">
+                Edit
+            </button>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript" src="/js/EditController.js"></script>

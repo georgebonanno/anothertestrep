@@ -1,0 +1,25 @@
+{
+  "name": "las3009",
+  "description": "assignment",
+  "main": "index.js",
+  "authors": [
+    "andrew"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "handlebars": "^4.0.5",
+    "underscore": "^1.8.3",
+    "angular-chart.js": "^0.10.2",
+    "angular-cookies": "^1.5.5"
+  }
+}

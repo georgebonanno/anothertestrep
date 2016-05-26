@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="Tracker">
+<head>
+    <meta charset="UTF-8">
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/Chart.js/Chart.js"></script>
+    <script src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script type="text/javascript" src="/js/tracker_old.js"></script>
+
+    <link rel="stylesheet" href="/bower_components/angular-chart.js/dist/angular-chart.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+
+<body class="cover-bg" ng-app="Tracker" ng-controller="TrackerController as tracker">
+
+<section>
+
+    <header class="page-header">
+        <h1 class="text-center">Budget Tracker</h1>
+    </header>
+
+    <table>
+        <tr>
+            <td>Transactions: {{ tracker.page }}</td>
+            <td><a href ng-hide="tracker.page === 'all'" ng-click="tracker.page = 'all'">all</a></td>
+            <td><a href ng-hide="tracker.page === 'income'" ng-click="tracker.page = 'income'">income</a></td>
+            <td><a href ng-hide="tracker.page === 'expense'" ng-click="tracker.page = 'expense'">expense</a></td>
+        </tr>
+    </table>
+
+    <div><span> Balance: &euro;{{ tracker.getBalance() }} </span></div>
+
+    <div><input type="text" placeholder="search" ng-model="search"/></div>
+
+    <table ng-hide="tracker.page === 'all'">
+        <tr>
+            <td>
+                <input
+                        type="date"
+                        placeholder="dd-MM-yyyy"
+                        ng-model="tracker.newTransaction.date"
+                />
+            </td>
+            <td><input placeholder="title" ng-model="tracker.newTransaction.title"/></td>
+            <td>
+                <input
+                        type="number"
+                        ng-model="tracker.newTransaction.price"
+                        min="0"
+                        placeholder="price"
+                        required
+
+                />
+            </td>
+            <td>
+                <button ng-hide="tracker.isEdit" class="bt bt-achieve" ng-click="tracker.add()">Add</button>
+                <button ng-show="tracker.isEdit" class="bt bt-achieve" ng-click="tracker.update()">Update</button>
+            </td>
+        </tr>
+    </table>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Type</th>
+        </tr>
+        <tr
+                ng-repeat="transaction in tracker.transactions | orderBy:'-price' | filter:search track by $index"
+                ng-if="transaction.type===tracker.page || tracker.page === 'all'"
+        >
+            <td>{{transaction.date | date:'MM/dd/yyyy'}}</td>
+            <td>{{transaction.title}}</td>
+            <td>&euro;{{transaction.price}}</td>
+            <td>{{transaction.type}}</td>
+            <td>
+                <button
+                        class="bt bt-achieve"
+                        ng-click="tracker.delete(transaction)"
+                >
+                    Delete
+                </button>
+            </td>
+            <td>
+                <button
+                        class="bt bt-achieve"
+                        ng-click="tracker.edit(transaction)"
+                        ng-hide="tracker.page==='all'"
+                >
+                    Edit
+                </button>
+            </td>
+        </tr>
+    </table>
+
+
+</section>
+
+</body>
+
+</html>
